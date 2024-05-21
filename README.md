@@ -4,7 +4,7 @@ L'objectif principal est de comprendre comment le climat de la région a changé
 
 ### Installation:
 - Cloner le dépôt avec la commande : git clone https://github.com/Mbakoh-marc/Projet-Prediction-Climatique.git
-- Installer les dépendances requis en utilisant pip install -r requirements.txt
+- Installer les dépendances requis en utilisant: pip install -r requirements.txt
 
 ### Utilisation du projet:
 
