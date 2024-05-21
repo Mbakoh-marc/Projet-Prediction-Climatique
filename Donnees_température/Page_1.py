@@ -31,7 +31,7 @@ def app():
     st.write("⛅ EVOLUTION DE L'HUMIDITE MOYENNE PAR DECENIE")
     plot_humidity_moyenne_decennie(df)
     st.write("""✅ Ce graphique montre clairement une tendance à la baisse de l'humidité moyenne mensuelle observée en Île-de-France pour chaque décennie allant de 1950 à 2000.
-     Dans la décennie de 1950, l'humidité moyenne était proche de 80,5 %, tandis que dans la décennie de 2000, elle tend vers 76 %.
+     Dans la décennie de 1950, l'humidité moyenne était proche de 80,5 %, tandis que dans la décennie de 2020, elle tend vers 76 %.
      Cela montre une diminution conséquente de 4,5 % d'humidité, ce qui pourrait indiquer une augmentation des températures, entraînant une baisse de l'humidité.\n""")
 
     # _____________________________________________________________________________________
@@ -50,16 +50,16 @@ def app():
     st.write("⛅ EVOLUTION DES TEMPERATURES MOYENNES MAXIMALES ET MINIMALES PAR DECENIE")
     plot_temp_max_min_decennie(df)
     st.write("""✅ Ces observations confirment notre hypothèse précédente : les températures moyennes maximales et minimales augmentent régulièrement par décennie.
-     Cette tendance est particulièrement notable entre les décennies de 1950 et 2000, où l'augmentation des températures moyennes maximales et minimales indique 
+     Cette tendance est particulièrement notable entre les décennies de 1950 et 2020, où l'augmentation des températures moyennes maximales et minimales indique 
      clairement un réchauffement climatique.\n""")
 
     # _____________________________________________________________________________________
 
     # Affichage du graphique de  comparaison des températures moyennes mensuelles entre deux périodes
-    st.write("⛅ COMPARAISON DES TEMPERATURES MOYENNES MENSUELLES ENTRE 1950-1960 & 1990-2000")
+    st.write("⛅ COMPARAISON DES TEMPERATURES MOYENNES MENSUELLES ENTRE 1950-1960 & 2010-2020")
     plot_monthly_comparison(df)
     st.write("""✅ Pour renforcer notre affirmation précédente, ce graphique démontre clairement que la température
-     moyenne entre 1950 et 1960 est inférieure à celle entre 1990 et 2000. Cette comparaison précise souligne davantage
+     moyenne entre 1950 et 1960 est inférieure à celle entre 2010 et 2020. Cette comparaison précise souligne davantage
       le phénomène du réchauffement climatique au fil des décennies.\n""")
 
     # _____________________________________________________________________________________
@@ -77,11 +77,11 @@ def app():
     À présent, nous examinerons les saisons pour détermier celles qui sont les plus impactées par ce phénomène.""")
 
     # Affichage du graphique de la différence de température moyenne par mois entre deux périodes
-    st.write("⛅ DIFFERENCE DE TEMPERATURE MOYENNE PAR MOIS ENTRE 1950-1960 et 1990-2000 :")
+    st.write("⛅ DIFFERENCE DE TEMPERATURE MOYENNE PAR MOIS ENTRE 1950-1960 et 2010-2010 :")
     plot_monthly_difference(df)
-    st.write("""✅ Ce graphique compare les moyennes mensuelles décennales des climats entre 1950-1960 et 1990-2000,
+    st.write("""✅ Ce graphique compare les moyennes mensuelles décennales des climats entre 1950-1960 et 2010-2020,
      offrant ainsi une vue d'ensemble de l'évolution climatique. Il met en évidence que certains mois de l'année,
-      tels que août, janvier et février, réagissent de manière plus significative à ce phénomène que d'autres. 
+      tels que Mars, Mai et septembre, réagissent de manière moins significative à ce phénomène que d'autres. 
       Cela soulève la question de savoir si certaines saisons sont plus sensibles aux changements climatiques que d'autres.\n""")
 
     # _____________________________________________________________________________________
@@ -91,32 +91,32 @@ def app():
     l'évolution des températures moyennes par saison et par décennie\n
     ⛅EVOLUTION DES TEMPERATURES MOYENNES PAR SAISON ET PAR DECENIE""")
     plot_seasonal_temperature_by_decade(df)
-    st.write("""\n✅ Ce graphique révèle des tendances plus marquées pour les saisons d'été et d'hiver, et moins prononcées pour les saisons du printemps et de l'automne. 
+    st.write("""\n✅ Ce graphique révèle des tendances plus marquées pour les saisons d'été ,d'hiver, d'automne et moins prononcées pour la saison du printemps. 
     Cela renforcerait-il notre hypothèse selon laquelle certaines saisons sont plus touchées que d'autres par ce phénomène ? ?""")
 
     # _____________________________________________________________________________________
 
     # Affichage du graphique de la comparaison des températures moyennes pour chaque saison
-    st.write("⛅ COMPARAISON DES TEMPERATURES MOYENNES SAISONEIERES ENTRE 1950-1960 & 1990-2000")
+    st.write("⛅ COMPARAISON DES TEMPERATURES MOYENNES SAISONEIERES ENTRE 1950-1960 & 2010-2020")
     plot_seasonal_comparison(df)
-    st.write("""\n✅ Ces graphiques révèlent une différence significative entre les saisons d'hiver et d'été de 1950-1960 et 1990-2000, tandis que la différence est plutôt minimale pour les saisons d'automne et de printemps. 
+    st.write("""\n✅ Ces graphiques révèlent une différence significative entre les saisons d'hiver, d'été et d'automne de 1950-1960 et 2010-2020, tandis que la différence est plutôt minimale pour le printemps. 
     Cette observation soulève l'intérêt d'examiner de plus près ces différences et de déterminer leur valeur moyenne.\n""")
 
     # _____________________________________________________________________________________
 
     # Affichage du graphique de la différence de température moyenne par saison entre deux périodes
-    st.write("⛅ DIFFERENCE DE TEMPERATURE MOYENNE PAR SAISON ENTRE 1950-1960 & 1990-2000 ")
+    st.write("⛅ DIFFERENCE DE TEMPERATURE MOYENNE PAR SAISON ENTRE 1950-1960 & 2010-2020 ")
     plot_seasonal_difference(df)
-    st.write("""\n✅ Nous observons une augmentation moyenne de 1,3°C pour l'hiver, 1,1°C pour l'été, 0,58°C pour l'automne et 0,62°C 
+    st.write("""\n✅ Nous observons une augmentation moyenne de 1,51°C pour l'hiver, 1,74°C pour l'été, 1,52°C pour l'automne et 0,85°C 
     pour le printemps au cours de ces 6 dernières décénies. Cette analyse nous permet de conclure que le phénomène de réchauffement 
-    climatique a un impact plus marqué sur certaines saisons, telles que l'hiver et l'été, que sur d'autres, comme le printemps et l'automne.\n""")
+    climatique a un impact plus marqué sur certaines saisons, telles que l'hiver et l'été et l'automne que sur d'autres, comme le printemps.\n""")
 
     # _____________________________________________________________________________________
     st.subheader("\nConclusion\n")
 
     st.write("""\n🏙️ Les données analysées révèlent une tendance claire au réchauffement climatique au cours des dernières décennies.
      Les températures moyennes ont augmenté de manière significative pour toutes les saisons, avec des augmentations plus prononcées 
-     observées pendant les saisons d'hiver et d'été. Cette augmentation progressive des températures met en évidence l'impact du changement 
+     observées pendant les saisons d'hiver ,d'été et d'automne. Cette augmentation progressive des températures met en évidence l'impact du changement 
      climatique sur les différentes saisons. Ces observations soulignent l'importance de prendre des mesures pour atténuer les effets du réchauffement
       climatique et s'adapter aux changements environnementaux.\n""")
 

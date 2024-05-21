@@ -75,15 +75,15 @@ def plot_temperature_by_decade(df_decade):
 # Tracé de la comparaison des températures moyennes mensuelles entre deux périodes
 def plot_monthly_comparison(df):
     period1 = df[(df['YEAR'] >= 1950) & (df['YEAR'] <= 1960)]
-    period2 = df[(df['YEAR'] >= 1990) & (df['YEAR'] <= 2000)]
+    period2 = df[(df['YEAR'] >= 2010) & (df['YEAR'] <= 2020)]
 
     monthly_temp1 = period1.groupby(period1['MONTH'])['TM'].mean()
     monthly_temp2 = period2.groupby(period2['MONTH'])['TM'].mean()
 
     fig, ax = plt.subplots(figsize=(7, 4.5))
     ax.plot(monthly_temp1.index, monthly_temp1.values, label='1950-1960', color='blue')
-    ax.plot(monthly_temp2.index, monthly_temp2.values, label='1990-2000', color='red')
-    ax.set_title('Comparaison des températures moyennes mensuelles entre 1950-1960 et 1990-2000')
+    ax.plot(monthly_temp2.index, monthly_temp2.values, label='2010-2020', color='red')
+    ax.set_title('Comparaison des températures moyennes mensuelles entre 1950-1960 et 2010-2020')
     ax.set_xlabel('Mois')
     ax.set_ylabel('Température moyenne (°C)')
     ax.set_xticks(range(1, 13))
@@ -125,7 +125,7 @@ def plot_seasonal_temperature_by_decade(df):
 # Comparaison des températures moyennes pour chaque saison
 def plot_seasonal_comparison(df):
     period1 = df[(df['YEAR'] >= 1950) & (df['YEAR'] <= 1960)].copy()
-    period2 = df[(df['YEAR'] >= 1990) & (df['YEAR'] <= 2000)].copy()
+    period2 = df[(df['YEAR'] >= 2010) & (df['YEAR'] <= 2020)].copy()
     period1['Saison'] = period1['MONTH'].apply(get_season)
     period2['Saison'] = period2['MONTH'].apply(get_season)
 
@@ -146,7 +146,7 @@ def plot_seasonal_comparison(df):
     for i, season in enumerate(seasons):
         ax = axes[i // 2, i % 2]
         ax.plot(range(1, 13), seasonal_temp1[season], label='1950-1960', color='blue')
-        ax.plot(range(1, 13), seasonal_temp2[season], label='1990-2000', color='red')
+        ax.plot(range(1, 13), seasonal_temp2[season], label='2010-2020', color='red')
         ax.set_title(f'Comparaison des températures moyennes pour {season}')
         ax.set_xlabel('Mois')
         ax.set_ylabel('Température moyenne (°C)')
@@ -161,7 +161,7 @@ def plot_seasonal_comparison(df):
 # Tracé de la différence de température moyenne par saison entre deux périodes
 def plot_seasonal_difference(df):
     period1 = df[(df['YEAR'] >= 1950) & (df['YEAR'] <= 1960)].copy()
-    period2 = df[(df['YEAR'] >= 1990) & (df['YEAR'] <= 2000)].copy()
+    period2 = df[(df['YEAR'] >= 2010) & (df['YEAR'] <= 2020)].copy()
     period1['Saison'] = period1['MONTH'].apply(get_season)
     period2['Saison'] = period2['MONTH'].apply(get_season)
 
@@ -175,7 +175,7 @@ def plot_seasonal_difference(df):
 
     fig, ax = plt.subplots(figsize=(5, 4))
     diff_seasonal_temp_evolution.plot(kind='bar', color='blue', ax=ax)
-    ax.set_title("Evolution de la température entre les saisons sur les décennies 1950-1960 et 1990-2000")
+    ax.set_title("Evolution de la température entre les saisons sur les décennies 1950-1960 et 2010-2020")
     ax.set_xlabel('Saison')
     ax.set_ylabel("Température moyenne (°C)")
     plt.tight_layout()
@@ -184,7 +184,7 @@ def plot_seasonal_difference(df):
 # Tracé de la différence de température moyenne par mois entre deux périodes
 def plot_monthly_difference(df):
     period1 = df[(df['YEAR'] >= 1950) & (df['YEAR'] <= 1960)].copy()
-    period2 = df[(df['YEAR'] >= 1990) & (df['YEAR'] <= 2000)].copy()
+    period2 = df[(df['YEAR'] >= 2010) & (df['YEAR'] <= 2020)].copy()
     period1['Mois'] = period1['MONTH']
     period2['Mois'] = period2['MONTH']
 
